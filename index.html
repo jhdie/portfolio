@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#08090a">
+  <meta name="description" content="江慧达的个人作品集 —— 软件工程在读，专注 Java 后端与 Vue 全栈开发。记录项目、能力与正在发生的成长。">
+  <meta name="author" content="江慧达">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="江慧达 — Software Engineer & Full-stack Developer">
+  <meta property="og:description" content="软件工程在读，专注 Java 后端与 Vue 全栈开发。四个项目，从 Web 到桌面再到硬件底层。">
+  <title>江慧达 — Software Engineer & Full-stack Developer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23d8ff4f'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-size='26' font-weight='700' fill='%2308090a'%3EJH%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <noscript>
+    <style>
+      .preloader, .cursor, .scroll-progress { display: none !important; }
+      body.is-loading { overflow: auto !important; }
+      .hero-title-cn span, .hero-copy-bottom, .hero-eyebrow, .hero-visual, .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader-top mono">
+      <span>JIANG HUIDA</span>
+      <span>PORTFOLIO / 2026</span>
+    </div>
+    <div class="preloader-main">
+      <p class="preloader-kicker mono">SOFTWARE ENGINEER / FULL-STACK DEVELOPER</p>
+      <div class="preloader-count-row">
+        <span class="preloader-zh">正在加载作品集</span>
+        <span class="preloader-count" id="loaderPercent">000</span>
+      </div>
+      <div class="preloader-track"><i id="loaderBar"></i></div>
+    </div>
+    <div class="preloader-bottom mono">
+      <span>HANGZHOU, CN · 30.2741° N</span>
+      <span id="loaderStatus">INITIALIZING</span>
+    </div>
+  </div>
+
+  <div class="scroll-progress" aria-hidden="true"><i id="scrollProgress"></i></div>
+
+  <header class="site-header" id="siteHeader">
+    <a class="brand" href="#home" aria-label="江慧达个人网站首页">
+      <span class="brand-mark">JH</span>
+      <span class="brand-text">
+        <strong>江慧达</strong>
+        <small>JIANG HUIDA</small>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="主导航">
+      <a href="#profile" data-nav="profile">关于</a>
+      <a href="#skills" data-nav="skills">能力</a>
+      <a href="#projects" data-nav="projects">项目</a>
+      <a href="#honors" data-nav="honors">荣誉</a>
+      <a href="#contact" data-nav="contact">联系</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="header-cta" href="mailto:3103316705@qq.com">
+        <span class="status-dot"></span>
+        <span>一起聊聊</span>
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7"/></svg>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="打开菜单" aria-expanded="false" aria-controls="menuOverlay">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-watermark" aria-hidden="true">MENU</div>
+    <nav class="menu-nav" aria-label="移动端导航">
+      <a href="#home" data-menu-link><span>00</span>首页<small>HOME</small></a>
+      <a href="#profile" data-menu-link><span>01</span>关于<small>PROFILE</small></a>
+      <a href="#skills" data-menu-link><span>02</span>能力<small>CAPABILITIES</small></a>
+      <a href="#projects" data-menu-link><span>03</span>项目<small>SELECTED WORK</small></a>
+      <a href="#honors" data-menu-link><span>04</span>荣誉<small>HONORS</small></a>
+      <a href="#contact" data-menu-link><span>05</span>联系<small>CONTACT</small></a>
+    </nav>
+    <div class="menu-footer mono">
+      <a href="mailto:3103316705@qq.com">3103316705@qq.com</a>
+      <span>HANGZHOU · CHINA</span>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="hero-eyebrow mono reveal-hero">
+              <span class="eyebrow-line"></span>
+              <span>SOFTWARE ENGINEERING · CLASS OF 2027</span>
+            </div>
+
+            <h1 class="hero-title" aria-label="江慧达，JIANG HUIDA">
+              <span class="hero-title-cn"><span>江</span><span>慧</span><span>达</span></span>
+              <span class="hero-title-en">JIANG HUIDA<span class="acid">.</span></span>
+            </h1>
+
+            <div class="hero-copy-bottom reveal-hero">
+              <div class="hero-role-row">
+                <p class="hero-role">Software Engineer <span>/</span> Full-stack Developer</p>
+                <p class="hero-location mono">HANGZHOU, CN</p>
+              </div>
+              <p class="hero-lede">软件工程在读，专注 Java 后端与 Vue 全栈。喜欢从零搭建系统，也执着于把每一处交互打磨到刚刚好。</p>
+              <div class="hero-actions">
+                <a class="btn btn-primary magnetic" href="#projects">
+                  <span>查看项目</span>
+                  <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M3 15 15 3M5 3h10v10"/></svg>
+                </a>
+                <a class="btn btn-ghost magnetic" href="#contact">
+                  <span>联系我</span>
+                  <svg viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h14M11 4l5 5-5 5"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal-hero" aria-hidden="true">
+            <div class="orbit-wrap" id="orbitWrap">
+              <div class="orbit-halo"></div>
+              <div class="orbit-grid"></div>
+              <div class="orbit-ring orbit-ring-outer"><i></i></div>
+              <div class="orbit-ring orbit-ring-mid"></div>
+              <div class="orbit-ring orbit-ring-inner"></div>
+              <div class="orbit-sweep"></div>
+
+              <div class="orbit-core">
+                <span class="core-label">FULL-STACK</span>
+                <span class="core-letters">JH</span>
+                <span class="core-year">2027</span>
+              </div>
+
+              <div class="orbit-node orbit-node-java">
+                <i></i><span>JAVA</span>
+              </div>
+              <div class="orbit-node orbit-node-vue">
+                <i></i><span>VUE 3</span>
+              </div>
+              <div class="orbit-node orbit-node-sql">
+                <i></i><span>MYSQL</span>
+              </div>
+              <div class="orbit-node orbit-node-ai">
+                <i></i><span>AI / LLM</span>
+              </div>
+
+              <span class="orbit-coord orbit-coord-top">30.2741° N</span>
+              <span class="orbit-coord orbit-coord-bottom">SIGNAL / 04</span>
+            </div>
+
+            <div class="orbit-meta">
+              <span class="availability"><i></i>AVAILABLE FOR INTERNSHIP</span>
+              <span class="mono">SCROLL TO DECODE</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-foot">
+          <a class="scroll-cue" href="#profile">
+            <span class="scroll-line"><i></i></span>
+            <span>SCROLL TO EXPLORE</span>
+          </a>
+          <div class="hero-foot-meta mono">
+            <span>GPA 4.29 / 5.0</span>
+            <span>04 PROJECTS</span>
+            <span>OPEN TO WORK</span>
+          </div>
+          <div class="hero-coords mono">
+            <span>120.1551° E</span>
+            <span>CHINA STANDARD TIME</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>JAVA</span><i>✦</i><span>SPRING BOOT</span><i>✦</i><span>VUE 3</span><i>✦</i><span>MYSQL</span><i>✦</i><span>C++ / QT</span><i>✦</i><span>AI INTEGRATION</span><i>✦</i><span>VERILOG</span><i>✦</i>
+        <span>JAVA</span><i>✦</i><span>SPRING BOOT</span><i>✦</i><span>VUE 3</span><i>✦</i><span>MYSQL</span><i>✦</i><span>C++ / QT</span><i>✦</i><span>AI INTEGRATION</span><i>✦</i><span>VERILOG</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="section section-light about" id="profile">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label mono">
+            <span>01</span>
+            <span>PROFILE / 关于</span>
+          </div>
+          <h2 class="section-title">关于我</h2>
+          <p class="section-note">写代码的人，也是体验的观察者。在逻辑与感受之间，找到那个刚刚好的平衡点。</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-lead">
+            <p class="mini-label mono reveal">CODE WITH INTENTION</p>
+            <h3 class="about-statement reveal">
+              <span>不满足于「能跑」，</span>
+              <span>更在意它<mark>为什么跑得好</mark>。</span>
+            </h3>
+            <p class="about-signature reveal">江慧达 <span>/</span> Software Engineering</p>
+          </div>
+
+          <div class="about-body">
+            <p class="reveal">我是江慧达，杭州电子科技大学信息工程学院软件工程专业 2027 届学生。我的兴趣不止于把功能实现出来，更在于理解系统如何组织、体验如何被感知。</p>
+            <p class="reveal">从 Spring Boot 后端到 Vue 前端，再到 Qt 桌面应用与 Verilog 硬件实验，我喜欢在不同抽象层级之间穿梭，把复杂问题拆成清晰的模块，再一块块搭起来。</p>
+
+            <div class="now-list">
+              <div class="now-item reveal">
+                <span class="mono">NOW</span>
+                <p>软件工程本科在读，GPA 4.29 / 5.0</p>
+              </div>
+              <div class="now-item reveal">
+                <span class="mono">FOCUS</span>
+                <p>Java 后端 · Vue 全栈 · AI 应用集成</p>
+              </div>
+              <div class="now-item reveal">
+                <span class="mono">SEEKING</span>
+                <p>软件开发实习 / 校招机会，随时到岗</p>
+              </div>
+            </div>
+
+            <article class="education-card reveal">
+              <div class="education-top mono">
+                <span>EDUCATION</span>
+                <span>2025.09 — 2027.06</span>
+              </div>
+              <h4>杭州电子科技大学信息工程学院</h4>
+              <p class="education-degree">软件工程 · 本科</p>
+              <div class="education-meta">
+                <span>GPA <strong>4.29</strong> / 5.0</span>
+                <span>计算机二级</span>
+                <span>CET-4</span>
+              </div>
+              <div class="course-tags">
+                <span>数据结构</span>
+                <span>计算机组成原理</span>
+                <span>算法分析与设计</span>
+                <span>数据库系统应用</span>
+                <span>大语言模型与 AI 应用</span>
+                <span>信息安全技术</span>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="stats-band">
+          <div class="stat reveal">
+            <span class="stat-value" data-count="4" data-pad="2">04</span>
+            <span class="stat-label mono">COMPLETE PROJECTS<br>完整项目</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="4.29" data-decimals="2">4.29</span>
+            <span class="stat-label mono">GPA / 5.0<br>学分绩点</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="52" data-pad="2">52</span>
+            <span class="stat-label mono">REST APIS<br>接口设计</span>
+          </div>
+          <div class="stat reveal">
+            <span class="stat-value" data-count="30" data-suffix="+">30+</span>
+            <span class="stat-label mono">IMAGE ALGORITHMS<br>手写算法</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light skills" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label mono">
+            <span>02</span>
+            <span>CAPABILITIES / 能力</span>
+          </div>
+          <h2 class="section-title">能力图谱</h2>
+          <p class="section-note">不止是工具清单。选择合适的技术，把问题解决得干净、稳定、可维护。</p>
+        </div>
+
+        <div class="skills-grid">
+          <aside class="skills-aside">
+            <p class="mini-label mono reveal">THE TOOLBOX</p>
+            <h3 class="skills-statement reveal">一个问题，<br><span>多种解法。</span></h3>
+            <p class="skills-desc reveal">以后端工程为支点，向前端体验与桌面开发延伸。熟悉从数据建模、接口设计到页面交互的完整链路。</p>
+            <div class="skills-focus reveal">
+              <span class="mono">CURRENT FOCUS</span>
+              <p>Java / Spring Boot<br>Vue 3 / AI 应用集成</p>
+            </div>
+          </aside>
+
+          <div class="skill-list">
+            <article class="skill-group reveal">
+              <div class="skill-heading">
+                <span class="skill-num mono">01</span>
+                <h3>后端工程</h3>
+                <span class="skill-en mono">BACKEND</span>
+              </div>
+              <p>从数据表结构到鉴权与接口，关注系统的秩序与边界。</p>
+              <div class="skill-tags">
+                <span class="is-core">Java</span>
+                <span class="is-core">Spring Boot</span>
+                <span>MyBatis</span>
+                <span>MyBatis-Plus</span>
+                <span>JWT</span>
+                <span>RESTful API</span>
+                <span>Maven</span>
+                <span class="is-core">MySQL</span>
+              </div>
+              <div class="skill-meta mono"><span>CORE</span><span>API / AUTH / DATA</span></div>
+            </article>
+
+            <article class="skill-group reveal">
+              <div class="skill-heading">
+                <span class="skill-num mono">02</span>
+                <h3>前端体验</h3>
+                <span class="skill-en mono">FRONTEND</span>
+              </div>
+              <p>让信息有层次，让操作有反馈，让界面值得被反复使用。</p>
+              <div class="skill-tags">
+                <span class="is-core">Vue 3</span>
+                <span>Vite</span>
+                <span>Vue Router</span>
+                <span>Pinia</span>
+                <span>Element Plus</span>
+                <span>Axios</span>
+                <span>微信小程序</span>
+                <span>Android 基础</span>
+              </div>
+              <div class="skill-meta mono"><span>INTERFACE</span><span>STATE / MOTION / UX</span></div>
+            </article>
+
+            <article class="skill-group reveal">
+              <div class="skill-heading">
+                <span class="skill-num mono">03</span>
+                <h3>编程语言</h3>
+                <span class="skill-en mono">LANGUAGES</span>
+              </div>
+              <p>在不同抽象层级之间切换，理解代码背后的计算与结构。</p>
+              <div class="skill-tags">
+                <span class="is-core">Java</span>
+                <span>C++</span>
+                <span>C#</span>
+                <span>SQL</span>
+                <span>Verilog HDL</span>
+              </div>
+              <div class="skill-meta mono"><span>FOUNDATION</span><span>OOP / SYSTEMS / HDL</span></div>
+            </article>
+
+            <article class="skill-group reveal">
+              <div class="skill-heading">
+                <span class="skill-num mono">04</span>
+                <h3>工具与系统</h3>
+                <span class="skill-en mono">TOOLING</span>
+              </div>
+              <p>从桌面端到硬件实验，用合适的工具把想法带到现实。</p>
+              <div class="skill-tags">
+                <span>Qt 6</span>
+                <span>Git</span>
+                <span>Vivado</span>
+                <span>FPGA 仿真</span>
+                <span>大模型 API</span>
+              </div>
+              <div class="skill-meta mono"><span>WORKFLOW</span><span>DESKTOP / HARDWARE / AI</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-head section-head-dark">
+          <div class="section-label mono">
+            <span>03</span>
+            <span>SELECTED WORK / 项目</span>
+          </div>
+          <h2 class="section-title">项目精选<span class="title-count">(04)</span></h2>
+          <p class="section-note">四个项目，从 Web 服务到桌面软件，再到硬件底层。点击任意项目，查看完整案例。</p>
+        </div>
+
+        <div class="project-list">
+          <button class="project-row" type="button" data-project="ticket" aria-haspopup="dialog">
+            <span class="project-num mono">01</span>
+            <span class="project-copy">
+              <span class="project-title">仿淘票票电影票务系统</span>
+              <span class="project-sub">Movie Ticketing Platform · 全栈 / 微信小程序</span>
+            </span>
+            <span class="project-stack mono">Spring Boot · MyBatis · MySQL · JWT</span>
+            <span class="project-year mono">2026</span>
+            <span class="project-arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M4 16 16 4M6 4h10v10"/></svg>
+            </span>
+          </button>
+
+          <button class="project-row" type="button" data-project="lifeverse" aria-haspopup="dialog">
+            <span class="project-num mono">02</span>
+            <span class="project-copy">
+              <span class="project-title">宇宙回响馆 LifeVerse</span>
+              <span class="project-sub">AI Life Archive · Web 平台 / AI 集成</span>
+            </span>
+            <span class="project-stack mono">Vue 3 · Pinia · Spring Boot · LLM API</span>
+            <span class="project-year mono">2026</span>
+            <span class="project-arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M4 16 16 4M6 4h10v10"/></svg>
+            </span>
+          </button>
+
+          <button class="project-row" type="button" data-project="vision" aria-haspopup="dialog">
+            <span class="project-num mono">03</span>
+            <span class="project-copy">
+              <span class="project-title">智能视觉处理软件</span>
+              <span class="project-sub">Intelligent Vision Lab · 桌面应用 / 图像算法</span>
+            </span>
+            <span class="project-stack mono">Qt 6 · C++ · QtConcurrent · AI API</span>
+            <span class="project-year mono">2026</span>
+            <span class="project-arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M4 16 16 4M6 4h10v10"/></svg>
+            </span>
+          </button>
+
+          <button class="project-row" type="button" data-project="mips" aria-haspopup="dialog">
+            <span class="project-num mono">04</span>
+            <span class="project-copy">
+              <span class="project-title">单周期 MIPS CPU</span>
+              <span class="project-sub">Single-cycle Processor · 硬件 / 数字逻辑</span>
+            </span>
+            <span class="project-stack mono">Verilog HDL · Vivado · Testbench</span>
+            <span class="project-year mono">2026</span>
+            <span class="project-arrow" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="M4 16 16 4M6 4h10v10"/></svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="project-foot mono">
+          <span>04 PROJECTS / 2026</span>
+          <span>CLICK TO OPEN CASE STUDY</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="project-preview" id="projectPreview" aria-hidden="true">
+      <div class="preview-art" id="previewArt"></div>
+      <div class="preview-foot">
+        <span class="preview-index mono" id="previewIndex">01</span>
+        <span class="preview-name" id="previewName">项目</span>
+        <span class="preview-open mono">VIEW ↗</span>
+      </div>
+    </div>
+
+    <section class="section section-light honors" id="honors">
+      <div class="container">
+        <div class="section-head">
+          <div class="section-label mono">
+            <span>04</span>
+            <span>HONORS / 荣誉</span>
+          </div>
+          <h2 class="section-title">一些肯定</h2>
+          <p class="section-note">它们不是终点，更像是沿途留下的坐标，提醒自己继续保持好奇与耐心。</p>
+        </div>
+
+        <div class="award-list">
+          <article class="award-row reveal">
+            <span class="award-index mono">A1</span>
+            <div class="award-copy">
+              <h3>浙江省政府奖学金</h3>
+              <p>省级 · 综合荣誉</p>
+            </div>
+            <span class="award-tag mono">PROVINCIAL</span>
+            <span class="award-star" aria-hidden="true">✦</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-index mono">A2</span>
+            <div class="award-copy">
+              <h3>校二等奖学金</h3>
+              <p>杭州电子科技大学信息工程学院 · 学业荣誉</p>
+            </div>
+            <span class="award-tag mono">SCHOLARSHIP</span>
+            <span class="award-star" aria-hidden="true">✦</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-index mono">A3</span>
+            <div class="award-copy">
+              <h3>“挑战杯”创业设计竞赛 · 三等奖</h3>
+              <p>杭州电子科技大学信息工程学院 · 第十五届</p>
+            </div>
+            <span class="award-tag mono">COMPETITION</span>
+            <span class="award-star" aria-hidden="true">✦</span>
+          </article>
+        </div>
+
+        <p class="honors-note reveal">
+          <span class="mono">NOTE TO SELF</span>
+          <span>保持输出，保持复盘，保持对未知的好奇。</span>
+        </p>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="contact-top">
+          <div>
+            <div class="section-label mono contact-label">
+              <span>05</span>
+              <span>CONTACT / 联系</span>
+            </div>
+            <h2 class="contact-title">一起做点<br><span>有意思的事。</span></h2>
+          </div>
+
+          <div class="contact-stamp" aria-hidden="true">
+            <svg class="stamp-ring" viewBox="0 0 160 160">
+              <defs>
+                <path id="stampPath" d="M80,80 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"></path>
+              </defs>
+              <text>
+                <textPath href="#stampPath" startOffset="0">OPEN TO WORK · 2027 GRAD · HANGZHOU · </textPath>
+              </text>
+            </svg>
+            <span class="stamp-center">JH</span>
+          </div>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-primary">
+            <p class="contact-intro">如果你正在寻找一位愿意学习、愿意把细节做好、也愿意为结果负责的软件开发实习生，欢迎来信。</p>
+            <a class="mail-link" href="mailto:3103316705@qq.com?subject=%E6%9D%A5%E8%87%AA%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%AB%99%E7%9A%84%E9%97%AE%E5%80%99">
+              <span>3103316705@qq.com</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12"/></svg>
+            </a>
+            <div class="contact-actions">
+              <button class="btn btn-primary" type="button" id="copyEmail">
+                <span>复制邮箱</span>
+                <svg viewBox="0 0 18 18" aria-hidden="true"><rect x="5" y="5" width="10" height="10" rx="2"/><path d="M3 11V5a2 2 0 0 1 2-2h6"/></svg>
+              </button>
+              <a class="text-link" href="tel:+8619357317289">或直接致电 <span>+86 193 5731 7289</span></a>
+            </div>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-detail">
+              <span class="mono">LOCATION</span>
+              <p>杭州 · 中国<br><small>期望工作城市</small></p>
+            </div>
+            <div class="contact-detail">
+              <span class="mono">AVAILABILITY</span>
+              <p>随时到岗<br><small>实习 / 校招机会</small></p>
+            </div>
+            <div class="contact-detail">
+              <span class="mono">ROLE</span>
+              <p>软件开发工程师<br><small>后端 / 全栈方向</small></p>
+            </div>
+            <div class="contact-detail">
+              <span class="mono">PHONE</span>
+              <p><a href="tel:+8619357317289">+86 193 5731 7289</a><br><small>电话 / 短信均可</small></p>
+            </div>
+          </div>
+        </div>
+
+        <footer class="site-footer">
+          <div class="footer-left mono">
+            <span>© <span id="year">2026</span> JIANG HUIDA</span>
+            <span>DESIGNED &amp; BUILT WITH INTENTION</span>
+          </div>
+          <div class="footer-right mono">
+            <span>HANGZHOU <span id="localTime">--:--:--</span> CST</span>
+            <a class="back-top" href="#home">BACK TO TOP <span>↑</span></a>
+          </div>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="project-dialog" id="projectDialog" aria-labelledby="dialogTitle">
+    <div class="dialog-shell">
+      <button class="dialog-close" type="button" id="dialogClose" aria-label="关闭项目详情">
+        <span></span>
+        <span></span>
+      </button>
+      <div class="dialog-visual" id="dialogVisual" aria-hidden="true"></div>
+      <div class="dialog-content">
+        <div class="dialog-topline mono">
+          <span id="dialogIndex">PROJECT / 01</span>
+          <span id="dialogYear">2026</span>
+        </div>
+        <h2 id="dialogTitle">项目名称</h2>
+        <p class="dialog-subtitle" id="dialogSubtitle"></p>
+        <p class="dialog-summary" id="dialogSummary"></p>
+
+        <div class="dialog-metrics" id="dialogMetrics"></div>
+
+        <div class="dialog-section">
+          <h3 class="mono">WHAT I BUILT / 核心工作</h3>
+          <ul class="dialog-highlights" id="dialogHighlights"></ul>
+        </div>
+
+        <div class="dialog-section">
+          <h3 class="mono">STACK / 技术栈</h3>
+          <div class="dialog-stack" id="dialogStack"></div>
+        </div>
+
+        <div class="dialog-nav">
+          <button type="button" class="dialog-nav-btn" id="dialogPrev">
+            <span class="mono">PREV</span>
+            <span class="nav-project-name" id="prevProject"></span>
+          </button>
+          <button type="button" class="dialog-nav-btn dialog-nav-next" id="dialogNext">
+            <span class="mono">NEXT</span>
+            <span class="nav-project-name" id="nextProject"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="cursor cursor-dot" id="cursorDot" aria-hidden="true"></div>
+  <div class="cursor cursor-ring" id="cursorRing" aria-hidden="true"><span id="cursorLabel"></span></div>
+  <div class="toast" id="toast" role="status" aria-live="polite">邮箱已复制</div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
